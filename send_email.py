@@ -1,6 +1,6 @@
 import smtplib
 import ssl
-import os
+from config import email_password
 
 
 def send_email(message, category):
@@ -11,7 +11,7 @@ def send_email(message, category):
     else:
         subject = "Warning notification"
     port = 465  # For SSL
-    password = ""
+    password = email_password
     # Create a secure SSL context
     context = ssl.create_default_context()
 

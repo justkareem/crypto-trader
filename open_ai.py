@@ -1,8 +1,8 @@
 import json
 import openai
-import os
+from config import openai_api
 # Load your API key from an environment variable or secret management service
-openai.api_key = ""
+openai.api_key = openai_api
 
 
 class OpenAi:

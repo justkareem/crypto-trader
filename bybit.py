@@ -2,15 +2,15 @@ from openai import InvalidRequestError
 from pybit.unified_trading import HTTP
 from pybit.exceptions import InvalidRequestError
 import re
-import os
+from config import bybit_api_key, bybit_api_secret
 
 
 class Bybit:
     def __init__(self):
         self.session = HTTP(
             testnet=True,
-            api_key="",
-            api_secret="")
+            api_key=bybit_api_key,
+            api_secret=bybit_api_secret)
         self.usdt_balance = float(
             self.session.get_wallet_balance(accountType="UNIFIED", coin="USDT")["result"]["list"][0][
                 "totalAvailableBalance"])

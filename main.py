@@ -3,10 +3,10 @@ from pyrogram.handlers import MessageHandler
 from open_ai import OpenAi
 from bybit import Bybit
 from send_email import send_email
-import os
+from config import telegram_api_id, telegram_api_hash
 
-api_id = 3759119
-api_hash = "fb37ce7b9a5043ed578873b28b195389"
+api_id = telegram_api_id
+api_hash = telegram_api_hash
 channel_id = -1001920251437
 
 
